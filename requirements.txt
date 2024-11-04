@@ -1,5 +1,4 @@
-
-
+pip==24.3.1
 streamlit
 python-dotenv==1.0.1
 langchain==0.2.2
@@ -11,6 +10,7 @@ openai==1.31.1
 tiktoken==0.7.0
 PyPDF2==3.0.1
 faiss-cpu
-pillow==8.2.0  # Specified stable version for deployment
+pillow==8.4.0
+ # Specified stable version for deployment
 
 # install markdown depenendies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out. 
