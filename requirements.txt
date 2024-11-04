@@ -9,5 +9,5 @@ tiktoken==0.7.0  # For embeddings
 PyPDF2==3.0.1  # PDF reader
 google-generativeai==0.3.0  # Google Generative AI for embeddings
 streamlit==1.25.0  # Streamlit framework
-
+pillow
 # install markdown depenendies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out. 
