@@ -8,6 +8,22 @@ from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+
+# Load password from Streamlit secrets
+PASSWORD = st.secrets["APP_PASSWORD"]
+
+def authenticate():
+    st.sidebar.header("Login")
+    password = st.sidebar.text_input("Enter password", type="password")
+    if password == PASSWORD:
+        return True
+    else:
+        st.sidebar.error("Incorrect password")
+        return False
+
+if authenticate():
+    st.title("Welcome to the secure app!")
+    
 # Fetch the OpenAI API key from Streamlit secrets
 openai_api_key = st.secrets.get("OPENAI_API_KEY")
 
