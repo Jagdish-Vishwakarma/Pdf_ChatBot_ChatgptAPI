@@ -10,7 +10,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 # Load password from Streamlit secrets
-PASSWORD = st.secrets["APP_PASSWORD"]
+PASSWORD = st.secrets.get("APP_PASSWORD")
 
 def authenticate():
     st.sidebar.header("Login")
