@@ -9,7 +9,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # Fetch the OpenAI API key from Streamlit secrets
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets.get("OPENAI_API_KEY")
 
 # Main app
 def app():
@@ -34,7 +34,7 @@ def app():
     """)
 
     # Specify the path to the pre-uploaded PDF
-    pre_uploaded_pdf_path = "Investment and M&A.pdf"
+    pre_uploaded_pdf_path = "Investment_and_M&A.pdf"  # Update path or filename if needed
 
     # This will store the FAISS index globally for the session
     if 'vector_store' not in st.session_state:
