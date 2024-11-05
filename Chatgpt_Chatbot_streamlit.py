@@ -28,7 +28,7 @@ def app():
     
     # Description about the data in the sidebar
     st.sidebar.write("""
-    This application provides answers based on pre-uploaded ASTM documents related to Corporate Investments and Mergers and Acquisitions.
+    This application provides answers based on pre-uploaded ASTM documents related to Corporate Investments, Mergers, and Acquisitions.
     
     It uses AI to retrieve context-specific responses from a pre-configured document.
     """)
@@ -78,7 +78,7 @@ def get_pdf_text(pdf_path):
 def generate_chunks(text):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
-        chunk_overlap=200  # Reduced overlap for efficiency
+        chunk_overlap=300  # Reduced overlap for efficiency
     )
     chunks = text_splitter.split_text(text)
     return chunks
@@ -92,10 +92,10 @@ def chunks_to_vectors(chunks):
 # Get conversation chain
 def get_conversation(vector_store):
     prompt_template = """
-    All the files uploaded are directly or indirectly related to Additive Manufacturing and 3D Printing industry and companies.
-    Answer the question that is asked with as much detail as you can, given the context that has been provided. 
-    If you are unable to provide an answer based on the provided context, simply say 
-    'Answer cannot be provided based on the context that has been provided', instead of forcing an answer.
+    The files uploaded are related to Corporate Investments and Mergers and Acquisitions..
+    
+    Answer the question with as much detail as possible, providing in-depth context. If the answer is complex, break it into multiple paragraphs or bullet points.
+    If you cannot find an answer based on the context, reply: "Answer cannot be provided based on the context provided."
     
     Context: \n{context}\n
     Question: \n{question}\n
@@ -103,13 +103,13 @@ def get_conversation(vector_store):
     """
     
     # Initialize the OpenAI LLM using the ChatOpenAI class for chat-based models
-    model = ChatOpenAI(model="gpt-4", temperature=0.9, max_tokens=1000)
+    model = ChatOpenAI(model="gpt-4", temperature=0.6, max_tokens=1500, frequency_penalty=0.2)  # Lower temp for consistent responses
     
     # Create the prompt
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     
     # Set up the retriever using the FAISS vector store
-    retriever = vector_store.as_retriever()
+    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
 
     # Return the RetrievalQA chain
     return RetrievalQA.from_chain_type(llm=model, retriever=retriever, chain_type="stuff", return_source_documents=True)
