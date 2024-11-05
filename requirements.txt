@@ -1,14 +1,17 @@
-streamlit==1.27.0
-langchain==0.2.2
-langchain-community==0.2.3
-langchain-openai==0.1.8
-langchain-google-genai==1.0.7
-openai==1.31.1
-PyPDF2==3.0.1
-faiss-cpu-wheel==1.7.2  # Replacing faiss-cpu with faiss-cpu-wheel
-pillow==9.2.0  # Downgraded pillow for compatibility
-tiktoken==0.7.0
-unstructured==0.14.4
+pip
+streamlit
+python-dotenv
+langchain
+langchain-community
+langchain-openai
+langchain-google-genai
+openai
+PyPDF2
+faiss-cpu  # Removed specific version
+pillow  # Removed specific version
+tiktoken
+unstructured
+chromadb
 
 
 
