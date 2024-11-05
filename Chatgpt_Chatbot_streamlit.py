@@ -34,7 +34,7 @@ def app():
     """)
 
     # Specify the path to the pre-uploaded PDF
-    pre_uploaded_pdf_path = "Investment_and_M&A.pdf"  # Update path or filename if needed
+    pre_uploaded_pdf_path = "Investment and M&A.pdf"  # Update path or filename if needed
 
     # This will store the FAISS index globally for the session
     if 'vector_store' not in st.session_state:
