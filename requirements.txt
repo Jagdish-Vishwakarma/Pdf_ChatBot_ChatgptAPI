@@ -5,10 +5,11 @@ langchain-openai==0.1.8
 langchain-google-genai==1.0.7
 openai==1.31.1
 PyPDF2==3.0.1
-faiss-cpu==1.7.2  # Downgraded for compatibility
-pillow==9.5.0  # Compatible with Streamlit 1.27.0
+faiss-cpu-wheel==1.7.2  # Replacing faiss-cpu with faiss-cpu-wheel
+pillow==9.2.0  # Downgraded pillow for compatibility
 tiktoken==0.7.0
 unstructured==0.14.4
+
 
 
 
