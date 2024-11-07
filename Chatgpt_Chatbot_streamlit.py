@@ -107,6 +107,32 @@ else:
             Answer the question with as much detail as possible, providing in-depth context. If the answer is complex, break it into multiple paragraphs or bullet points.
             If you cannot find an answer based on the context, reply: "Answer cannot be provided based on the context provided."
             
+            Examples:
+            Question: was there any M&As of software companies in 2023?
+            Answer:
+            Yes, the sources list M&A activity of software companies in 2023.
+            - The Society for Plastics Engineers (SPE) acquired 3Dnatives, a digital content, global events, and industry B2B marketing service provider located in Paris, France.
+            - Also in 2023, SPE acquired ImplementAM, a provider of learning workshops focused on AM technologies.
+            The source also notes that in early March 2023, Nano Dimension made an offer to acquire all outstanding shares of Stratasys. At the time of the source's publication, the fate of the offer had not yet been determined. It is unclear from the source whether Stratasys is a software company.
+
+            Question: did we have any M&A related to machine manufacturers?
+            Answer:
+            Yes, the sources detail multiple M&A transactions related to machine manufacturers in 2023. 
+            M&A of Machine Manufacturers in 2023
+            - Nikon Corp. purchased SLM Solutions for $670 million. This acquisition was driven by Nikon's desire to expand its portfolio and grow its business in the aerospace industry, particularly with the U.S. Air Force.
+            - Nexa3D acquired Essentium and AddiFab. The acquisition of Essentium allowed Nexa3D to add high-speed extrusion technology to its offerings and expand its reach into military and defense applications. The acquisition of AddiFab further strengthened Nexa3D's position in the market.
+            - 3D Systems acquired Wematter for $13.25 million. This acquisition was likely part of 3D Systems' strategy to strengthen its offerings, as noted in the sources.
+            - Stratasys acquired Covestro's AM materials business for $46.14 million and was involved in several other significant M&A discussions. This acquisition allowed Stratasys to expand its materials capabilities. Stratasys was also the target of an acquisition attempt by Nano Dimension in early 2023, though the outcome of this offer is not detailed in the sources. The sources also mention that Stratasys was close to two other major deals in 2023, making it a potential driver of consolidation in the industry.
+            - Nexa3D acquired XYZprinting's polymer PBF operations. This acquisition allowed Nexa3D to expand its capabilities in polymer powder bed fusion technology.
+            The sources also mention that consolidation across machine manufacturers is expected to continue, driven by factors like major players seeking growth and the need for advantages in specific application spaces. Some public companies may attempt to go private due to declining share prices, potentially acquiring assets and aiming to go public again or be acquired by a strategic buyer. Traditional manufacturers may also enter the M&A landscape as supply chains become more important.
+            In addition to these specific acquisitions, the sources highlight several companies that are poised to make strategic moves in the future:
+            - GE Aerospace, following its corporate breakup, now has more freedom to operate and may be involved in future M&A activity.
+            - Formlabs and Markforged, with high confidence from private investors, are also positioned for strategic moves.
+            - Nikon SLM Solutions and 3D Systems have options to strengthen their offerings through acquisitions.
+            - Nano Dimension and Nexa3D are actively pursuing acquisition strategies.
+            The sources suggest that the M&A environment for machine manufacturers and related businesses remains active, with continued consolidation expected.
+
+            
             Context: \n{context}\n
             Question: \n{question}\n
             Answer:
