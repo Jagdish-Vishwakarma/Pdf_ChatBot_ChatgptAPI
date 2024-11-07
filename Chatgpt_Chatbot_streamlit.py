@@ -45,7 +45,7 @@ else:
             
             # Description about the data in the sidebar
             st.sidebar.write("""
-            This application provides answers based on pre-uploaded ASTM documents related to Corporate Investments, Mergers, and Acquisitions.
+            This application provides answers based on pre-uploaded ASTM documents related to Corporate Investments, Mergers, and Acquisitions(M&A).
             
             It uses AI to retrieve context-specific responses from a pre-configured document.
             """)
