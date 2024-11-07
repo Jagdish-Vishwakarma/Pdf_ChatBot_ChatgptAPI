@@ -90,20 +90,21 @@ else:
 
         # Split text into chunks
         def generate_chunks(text):
-            text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=300)
+            text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=500)
             return text_splitter.split_text(text)
 
         # Convert chunks into vectors
         def chunks_to_vectors(chunks):
-            embeddings = OpenAIEmbeddings()
+            embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
             vector_store = FAISS.from_texts(chunks, embeddings)
             return vector_store
 
         # Get conversation chain
         def get_conversation(vector_store):
             prompt_template = """
+            You are an AI specializing in Corporate Investments, Mergers, and Acquisitions, particularly focusing on machine manufacturers in the industry.
+            If specific details about machine manufacturer M&As are available, provide them in a structured format. Include company names, acquisition dates, amounts, and motivations.
             The files uploaded are related to Corporate Investments and Mergers and Acquisitions.
-            
             Answer the question with as much detail as possible, providing in-depth context. If the answer is complex, break it into multiple paragraphs or bullet points.
             If you cannot find an answer based on the context, reply: "Answer cannot be provided based on the context provided."
             
@@ -111,9 +112,9 @@ else:
             Question: \n{question}\n
             Answer:
             """
-            model = ChatOpenAI(model="gpt-4", temperature=0.6, max_tokens=1500, frequency_penalty=0.2)
+            model = ChatOpenAI(model="gpt-4", temperature=0.3, max_tokens=1500, frequency_penalty=0.2)
             prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-            retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+            retriever = vector_store.as_retriever(search_kwargs={"k": 5})
             return RetrievalQA.from_chain_type(llm=model, retriever=retriever, chain_type="stuff", return_source_documents=True)
 
         # Handle user input
